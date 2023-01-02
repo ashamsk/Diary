@@ -1,0 +1,52 @@
+<!-- <button class="cancel-button" [routerLink]="['userhome']"><i class="fa fa-chevron-circle-left" style="font-size:24px"></i></button>
+    <header><h1 class="title">My Digital Diary</h1></header> -->
+<section class="section journal-section">
+    <div class="container">
+      <div class="container-row container-row-journal">
+        <div class="container-item container-item-journal">
+
+          <!-- uid is passed as rough value for testing -->
+          <form [formGroup]="EditCourseForm">
+            <input type="hidden" formControlName='did'>
+            <label for="entry-title" class="journal-label">Title</label>
+            <input
+              type="text"
+              name="entry-title"
+              id="entry-title"
+              class="entry-text-title ng-pristine ng-valid ng-touched"
+
+              formControlName='title'
+
+            />
+            <label for="entry-title" class="journal-label">Date</label>
+            <input
+              type="text"
+              name="entry-title"
+              id="entry-title"
+              class="entry-text-title ng-pristine ng-valid ng-touched"
+              readonly="readonly"
+              formControlName='date' 
+              
+
+            />
+            <label for="entry" class="journal-label">Today's Entry</label>
+            <textarea
+              name="daily-entry"
+              formControlName='description'
+              class="entry-text-box"
+              placeholder="What's on your mind today? 💭"></textarea>
+            <button class="btn-main entry-submit-btn" (click)="SubmitOn()">Update</button>
+            <input type="hidden" formControlName='uid'>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journal Entry Results -->
+  <section class="section sectionEntryResults" id="entryResultsSection">
+    <div class="container">
+      <div class="container-row entryResultRow"></div>
+    </div>
+  </section>
+  <!-- <router-outlet></router-outlet> -->

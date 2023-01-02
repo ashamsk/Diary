@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <h1>Diary Entry</h1>
+    <table class="table">
+        <thead>
+            <th> No. </th>
+            <th>Title</th>
+            <th> Date </th>
+            <th>Uid</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Open</th>
+            <br>
+        </thead>
+        <tr *ngFor="let item of Dataarray let i=index" class="table-primary">
+            <td> {{i+1}} </td>
+            <td> {{item.title}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.uid}}</td>
+
+            <td><a [routerLink]="['/userhome/dairyedit/',item.did]">Edit<i class="fa fa-edit"></i></a></td>
+            <td><a [routerLink]="['/userhome/dairydelete/',item.did]">Delete<i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td><a [routerLink]="['/userhome/dairyopen',item.did]">View<i class="fa fa-book"></i></a></td>
+        </tr>
+    </table>
+</div>

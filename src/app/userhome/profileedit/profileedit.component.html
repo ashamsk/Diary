@@ -1,0 +1,63 @@
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <!-- <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div> -->
+             
+<!-- <div class="profile-pic">
+    <label class="-label" for="file">
+      <span class="glyphicon glyphicon-camera"></span>
+      <span>Change Image</span>
+    </label>
+    <input id="file" type="file" onchange="loadFile(event)"/>
+    <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output" width="200" />
+  </div> -->
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <form [formGroup]='ProfileEditForm'>
+
+                
+                <div class="row mt-2">
+                    <!-- <div class="d-flex justify-content-between align-items-center experience"><span>Edit Profile</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br> -->
+                    <br><br>
+                    <div class="col-md-6"><label class="labels">First Name</label><input type="text" formControlName="firstname" class="form-control" placeholder="first name" value=""></div>
+                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" formControlName="lastname" class="form-control" value="" placeholder="last name"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="date" formControlName="dob" class="form-control" placeholder="enter phone number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" formControlName="phno" class="form-control" placeholder="enter phone number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Permanent Address</label><input type="text" formControlName="address" class="form-control" placeholder="enter address" value=""></div>
+                    <!-- <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
+                    <div class="col-md-12"><label class="labels">Pincode</label><input type="text" formControlName="pin" class="form-control" placeholder="enter pincode" value=""></div>
+                    
+                    <div class="col-md-12"><label class="labels">Identity Card number</label><input type="text" formControlName="idno" class="form-control" placeholder="enter id Number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Driving Licence Number</label><input type="text" formControlName="dlno" class="form-control" placeholder="enter DL Number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" formControlName="email" class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="col-md-12"><label class="labels">Education</label><input type="text" formControlName="education" class="form-control" placeholder="education" value=""></div>
+                    <div class="col-md-12"><label class="labels">Passport Number</label><input type="text" formControlName="passno" class="form-control" placeholder="enter passport number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Bank Account Number</label><input type="text" formControlName="bano" class="form-control" placeholder="bank account number" value=""></div>
+                    <input type="hidden" formControlName="uid" [(ngModel)]="uid">
+                    <!-- <input type="hidden" formControlName="pid"> -->
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Country</label><input type="text" formControlName="country" class="form-control" placeholder="country" value=""></div>
+                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" formControlName="state" class="form-control" value="" placeholder="state"></div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click)="OnSubmit()">Save Profile</button></div>
+            </form>
+            </div>
+        </div>
+    
+        <!-- <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Profile</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
+                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
