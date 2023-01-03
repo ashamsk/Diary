@@ -45,9 +45,13 @@ this.uid=localStorage.getItem("uid")
     
     this.backendservice.viewprofiledata(uid).subscribe((data: any) => {
       this.Profiledataarray = data;
+      if(this.Profiledataarray==null)
+      {
+    this.router.navigate(['/userhome/profileinsert'])
+      }
       this.ProfileEditForm.setValue({
        pid:data.pid,
-        uid:data.uid,
+        uid:localStorage.getItem("uid"),
         firstname: data.firstname,
         lastname: data.lastname,
         dob:data.dob,
@@ -62,28 +66,15 @@ this.uid=localStorage.getItem("uid")
         bano:data.bano,
         country:data.country,
         state:data.state
+
     });
+    
   });
   
   }
 
   OnSubmit()
   {
-    
-    if(this.Profiledataarray==null)
-    {
-     // console.log("Victory")
-
-      this.backendservice.insertprofiledata(this.ProfileEditForm.value)
-    }
-    else
-    {
-     // console.log("Update")
-
       this.backendservice.updateprofiledata(this.ProfileEditForm.value)
-//console.log(this.ProfileEditForm.value)
-    }
-    
-    
   }
 }

@@ -10,6 +10,7 @@ import { DairyopenComponent } from './userhome/dairyopen/dairyopen.component';
 import { DairyviewComponent } from './userhome/dairyview/dairyview.component';
 import { ProfileComponent } from './userhome/profile/profile.component';
 import { ProfileeditComponent } from './userhome/profileedit/profileedit.component';
+import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 
 
@@ -29,7 +30,8 @@ children:
 {path:'diaryview',component:DairyviewComponent},
 {path:'dairyedit/:id',component:DairyeditComponent},
 {path:'dairyopen/:id',component:DairyopenComponent},
-{path:'dairydelete/:id',component:DairydeleteComponent}
+{path:'dairydelete/:id',component:DairydeleteComponent},
+{path:'profileinsert',component:ProfileinsertComponent}
 
 ]
 },

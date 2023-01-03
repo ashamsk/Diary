@@ -18,6 +18,7 @@ import { DairyviewComponent } from './userhome/dairyview/dairyview.component';
 import { DairyeditComponent } from './userhome/dairyedit/dairyedit.component';
 import { DairyopenComponent } from './userhome/dairyopen/dairyopen.component';
 import { DairydeleteComponent } from './userhome/dairydelete/dairydelete.component';
+import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DairydeleteComponent } from './userhome/dairydelete/dairydelete.compone
     DairyeditComponent,
     DairyopenComponent,
     DairydeleteComponent,
+    ProfileinsertComponent,
   ],
   imports: [
     BrowserModule,
