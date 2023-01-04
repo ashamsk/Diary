@@ -71,5 +71,30 @@ export class BackendserviceService {
     alert("Value Deleted Sussessfully")
   this.router.navigate(['/userhome/diaryview']);})
   }
+  inserttodo(data:any)
+  {
+    this.http.post("https://localhost:7228/api/Todo/Inserttodo", data).toPromise().then(result => {
+      //console.log(data);
+      console.log(result);
+      alert("Value Inserted Suceesfully !!");
+      //this.router.navigate(['/userhome'])
+      window.location.reload()
+    })
+  }
+  gettododata(uid:any)
+  {
+    return this.http.get<any>("https://localhost:7228/api/Todo/viewtodo/" + uid)
+  }
+  viewdeletetodo(did:any)
+  {
+    return this.http.get<any>("https://localhost:7228/api/Todo/Viewtododelete/" + did)
+  }
+  deletetododata(did:number)
+  {
+    return this.http.delete<any>('https://localhost:7228/api/Todo/deletetodoentry/'+did).toPromise().then(result=>
+    {console.log(result)
+    alert("Value Deleted Sussessfully")
+  this.router.navigate(['/userhome/todo']);})
+  }
 
 }

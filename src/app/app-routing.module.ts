@@ -11,6 +11,8 @@ import { DairyviewComponent } from './userhome/dairyview/dairyview.component';
 import { ProfileComponent } from './userhome/profile/profile.component';
 import { ProfileeditComponent } from './userhome/profileedit/profileedit.component';
 import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.component';
+import { TodoComponent } from './userhome/todo/todo.component';
+import { TododeleteComponent } from './userhome/tododelete/tododelete.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 
 
@@ -31,7 +33,9 @@ children:
 {path:'dairyedit/:id',component:DairyeditComponent},
 {path:'dairyopen/:id',component:DairyopenComponent},
 {path:'dairydelete/:id',component:DairydeleteComponent},
-{path:'profileinsert',component:ProfileinsertComponent}
+{path:'profileinsert',component:ProfileinsertComponent},
+{path:'todo',component:TodoComponent},
+{path:'tododelete/:id',component:TododeleteComponent}
 
 ]
 },

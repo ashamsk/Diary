@@ -1,0 +1,25 @@
+<div class="container">
+    <form  [formGroup]='DeleteForm'>
+      <div class="container mt-3">
+         
+            <h1>So You are done with this task?</h1>
+            <table class="table">
+                <thead>
+                    <th>Task </th>
+                    
+  
+                </thead>
+                
+                <tr   class="table-primary">
+                    
+                    <td>{{Dataarray["task"]}}</td>
+  
+                </tr>
+            </table>
+        </div>
+    <div class="buttons">
+      <button class="confirm-button" (click)="onSubmit()" >Yes</button>
+      <button class="cancel-button" [routerLink]="['app']">No</button>
+    </div>
+  </form>
+  </div>

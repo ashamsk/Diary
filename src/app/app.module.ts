@@ -19,6 +19,8 @@ import { DairyeditComponent } from './userhome/dairyedit/dairyedit.component';
 import { DairyopenComponent } from './userhome/dairyopen/dairyopen.component';
 import { DairydeleteComponent } from './userhome/dairydelete/dairydelete.component';
 import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.component';
+import { TodoComponent } from './userhome/todo/todo.component';
+import { TododeleteComponent } from './userhome/tododelete/tododelete.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.c
     DairyopenComponent,
     DairydeleteComponent,
     ProfileinsertComponent,
+    TodoComponent,
+    TododeleteComponent,
   ],
   imports: [
     BrowserModule,
