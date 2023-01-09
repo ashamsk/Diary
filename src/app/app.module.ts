@@ -21,6 +21,8 @@ import { DairydeleteComponent } from './userhome/dairydelete/dairydelete.compone
 import { ProfileinsertComponent } from './userhome/profileinsert/profileinsert.component';
 import { TodoComponent } from './userhome/todo/todo.component';
 import { TododeleteComponent } from './userhome/tododelete/tododelete.component';
+import { Home1Component } from './home/home1/home1.component';
+import { Userhome1Component } from './userhome/userhome1/userhome1.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { TododeleteComponent } from './userhome/tododelete/tododelete.component'
     ProfileinsertComponent,
     TodoComponent,
     TododeleteComponent,
+    Home1Component,
+    Userhome1Component,
   ],
   imports: [
     BrowserModule,

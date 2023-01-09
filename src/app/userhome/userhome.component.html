@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-sm bg-danger navbar-danger">
+<!-- <nav class="navbar navbar-expand-sm bg-danger navbar-danger">
     <div class="container-fluid">
-        <!-- Links -->
+        
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/userhome']">Home</a>
@@ -19,12 +19,36 @@
                 <a class="nav-link" [routerLink]="['/userhome/todo']">To-Do List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="">Logout</a>
+                <a class="nav-link" [routerLink]="['../home']">Logout</a>
             </li>
             
         </ul>
     </div>
-</nav>
-<!-- <h1>Welcome {{this.uid}}</h1>
-<h1>Welcome {{this.name}}</h1> -->
+</nav> -->
+
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1><a href="index.html">Digital Dairy</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="" [routerLink]="['/userhome/userhome1']">Home</a></li>
+          
+          
+          <li><a [routerLink]="['/userhome/diaryentry']">Dairy Entry</a></li>
+          <li><a [routerLink]="['/userhome/diaryview']">Dairy View</a></li>    
+          <li><a [routerLink]="['/userhome/profile']">Profile</a></li>   
+          <li> <a [routerLink]="['/userhome/todo']">ToDo</a></li>  
+          <li> <a>Log Out</a></li>  
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
 <router-outlet></router-outlet>

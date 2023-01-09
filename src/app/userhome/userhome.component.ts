@@ -12,6 +12,6 @@ export class UserhomeComponent{
 ngOnInit():void{
   this.uid=localStorage.getItem("uid")
   this.name=localStorage.getItem("name")
-  console.log(this.uid)
+  // console.log(this.uid)
 }
 }

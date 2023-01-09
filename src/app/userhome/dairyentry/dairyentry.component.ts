@@ -13,7 +13,7 @@ export class DairyentryComponent {
   uid:any;
   constructor(public datepipe:DatePipe,private fb:FormBuilder,private backendservice:BackendserviceService)
   {
-    let currentDateTime =this.datepipe.transform((new Date), 'dd-MM-yyyy');
+    let currentDateTime =this.datepipe.transform((new Date), 'EEEE, MMMM d, y');
     this.currdate=currentDateTime;
     this.uid=localStorage.getItem("uid")
   }

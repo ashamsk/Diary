@@ -1,26 +1,169 @@
-<div class="container mt-3">
+<!-- <div class="container mt-3">
     <h1>Diary Entry</h1>
     <table class="table">
         <thead>
             <th> No. </th>
             <th>Title</th>
             <th> Date </th>
-            <th>Uid</th>
+            
 
-            <th>Edit</th>
-            <th>Delete</th>
-            <th>Open</th>
+            <th></th>
+            <th></th>
+            <th></th>
             <br>
         </thead>
         <tr *ngFor="let item of Dataarray let i=index" class="table-primary">
             <td> {{i+1}} </td>
             <td> {{item.title}}</td>
             <td>{{item.date}}</td>
-            <td>{{item.uid}}</td>
+            
 
-            <td><a [routerLink]="['/userhome/dairyedit/',item.did]">Edit<i class="fa fa-edit"></i></a></td>
-            <td><a [routerLink]="['/userhome/dairydelete/',item.did]">Delete<i class="fa fa-trash" aria-hidden="true"></i></a></td>
-            <td><a [routerLink]="['/userhome/dairyopen',item.did]">View<i class="fa fa-book"></i></a></td>
+            <td><a [routerLink]="['/userhome/dairyedit/',item.did]"><i class="fa fa-edit"></i></a></td>
+            <td><a [routerLink]="['/userhome/dairydelete/',item.did]"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td><a [routerLink]="['/userhome/dairyopen',item.did]"><i class="fa fa-book"></i></a></td>
         </tr>
     </table>
+</div> -->
+
+<!-- New View -->
+<!-- sidebar starts -->
+
+
+
+<!-- sidebar ends -->
+
+
+
+<!-- feed starts -->
+
+<div class="feed">
+
+    <div class="feed__header">
+
+        <h2>My Diary Entries</h2>
+
+    </div>
+
+
+
+    <!-- tweetbox starts -->
+
+    <!-- <div class="tweetBox">
+
+          <form>
+
+            <div class="tweetbox__input">
+
+              <img
+
+                src="https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png"
+
+                alt=""
+
+              />
+
+              <input type="text" placeholder="What's happening?" />
+
+            </div>
+
+            <button class="tweetBox__tweetButton">Tweet</button>
+
+          </form>
+
+        </div> -->
+
+    <!-- tweetbox ends -->
+
+
+
+    <!-- post starts -->
+
+
+
+
+
+
+
+
+
+    <div *ngFor="let item of Dataarray let i=index" class="post">
+
+        <div class="post__avatar">
+
+            <img src="https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png"
+                alt="" />
+
+        </div>
+
+
+
+        <div class="post__body">
+
+            <div class="post__header">
+
+                <div class="post__headerText">
+
+                    <h3>
+
+                        <!-- {{name}} -->
+                        You
+
+                        <span class="post__headerSpecial"><span class="material-icons post__badge"> posted on
+                            </span>{{item.date}}</span>
+
+                    </h3>
+
+
+
+                </div>
+
+                <div class="post__headerDescription">
+
+                    <p>{{item.title}}</p>
+                    
+
+                </div>
+
+            </div>
+
+
+
+            <div class="post__footer">
+
+                <span> <a style="font-size: large;" [routerLink]="['/userhome/dairyedit/',item.did]"><i class="bi bi-pencil"> </i></a>&nbsp;&nbsp;&nbsp; </span>
+
+                <span> <a style="font-size: large;" [routerLink]="['/userhome/dairydelete/',item.did]"><i class="bi bi-eraser-fill"
+                            aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;</span>
+
+                <span><a style="font-size: large;" [routerLink]="['/userhome/dairyopen',item.did]"><i class="bi bi-book"></i></a></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- post ends -->
+
+
+
+    <!-- post starts -->
+
+
+
+    <!-- post ends -->
+
 </div>
+
+<!-- feed ends -->

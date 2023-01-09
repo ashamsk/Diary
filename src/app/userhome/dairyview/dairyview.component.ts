@@ -8,11 +8,13 @@ import { BackendserviceService } from 'src/app/backendservice.service';
 })
 export class DairyviewComponent {
   uid:any
+  name:any
   constructor(private backendservice:BackendserviceService){}
   Dataarray: any[]=[];
   ngOnInit()
   {
     this.uid=localStorage.getItem("uid")
+    this.name=localStorage.getItem("name")
     this.backendservice.getdairydata(this.uid).subscribe((res) => {this.Dataarray = res;})
   }
 }

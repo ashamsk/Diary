@@ -3,7 +3,8 @@
     <style>
       .background-radial-gradient {
         background-color: hsl(218, 41%, 15%);
-        background-image: radial-gradient(650px circle at 0% 0%,
+         background-image: url("assets/images/slide/slide-2.jpg");
+        /*radial-gradient(650px circle at 0% 0%,
             hsl(218, 41%, 35%) 15%,
             hsl(218, 41%, 30%) 35%,
             hsl(218, 41%, 20%) 75%,
@@ -14,10 +15,10 @@
             hsl(218, 41%, 30%) 35%,
             hsl(218, 41%, 20%) 75%,
             hsl(218, 41%, 19%) 80%,
-            transparent 100%);
+            transparent 100%); */
       }
   
-      #radius-shape-1 {
+      /* #radius-shape-1 {
         height: 220px;
         width: 220px;
         top: -60px;
@@ -34,7 +35,7 @@
         height: 300px;
         background: radial-gradient(#44006b, #ad1fff);
         overflow: hidden;
-      }
+      } */
   
       .bg-glass {
         background-color: hsla(0, 0%, 100%, 0.9) !important;
@@ -45,10 +46,10 @@
     <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          <!-- <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
             Digital <br />
             <span style="color: hsl(218, 81%, 75%)">Dairy</span>
-          </h1>
+          </h1> -->
 
         </div>
   
@@ -62,33 +63,40 @@
   
 
                 <!--Login Form-->
-                <div class="form-outline mb-4">
-                <h2 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(219, 91%, 13%)">
-                    Login <br />
+                <div class="form-outline mb-4" align="center">
+                  
+                <h2 class="my-5 display-5 fw-bold ls-tight"  style="color: hsla(188, 3%, 46%, 0.789); font-family:Impact">
+                    LOGIN <br />
                 
                   </h2>
                 </div>
 
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <input type="email" formControlName="username" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address</label>
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-envelope fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="email" formControlName="username" id="form3Example3c" class="form-control" placeholder="Email" />
+                    <!-- <label class="form-label" for="form3Example3c">Your Email</label> -->
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-lock fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="password" formControlName="password" id="form3Example4c" class="form-control" placeholder="Password"/>
+                    <!-- <label class="form-label" for="form3Example4c">Password</label> -->
+                  </div>
                 </div>
   
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" formControlName="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label>
-                </div>
-  
+                
                 <!-- Checkbox -->
                 
   
                 <!-- Submit button -->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" (click)="OnSubmit()" class="btn btn-primary btn-lg btn-block mb-4">
-                  Sign up
+                <button type="submit" (click)="OnSubmit()" class="btn btn-primary btn-lg btn-block mb-4" style="background-color: #e96b56; border: none;">
+                  Sign In
                 </button>
+                <br>
+                <p class="message">Not registered? <a [routerLink]="['/home/register']">Create an account</a></p>
               </form>
             </div>
           </div>
@@ -96,4 +104,5 @@
       </div>
     </div>
   </section>
+  
   <!-- Section: Design Block -->

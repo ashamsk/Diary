@@ -55,7 +55,7 @@ export class LoginComponent {
           console.log(obj.uid);
           localStorage.setItem("name",obj.name);
           localStorage.setItem("uid",obj.uid);
-          this.route.navigate(['userhome'])
+          this.route.navigate(['userhome/userhome1'])
         }
       });
   }
