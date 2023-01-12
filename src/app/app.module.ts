@@ -23,6 +23,8 @@ import { TodoComponent } from './userhome/todo/todo.component';
 import { TododeleteComponent } from './userhome/tododelete/tododelete.component';
 import { Home1Component } from './home/home1/home1.component';
 import { Userhome1Component } from './userhome/userhome1/userhome1.component';
+import { WeatherComponent } from './userhome/weather/weather.component';
+import { CalculatorComponent } from './userhome/calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { Userhome1Component } from './userhome/userhome1/userhome1.component';
     TododeleteComponent,
     Home1Component,
     Userhome1Component,
+    WeatherComponent,
+    CalculatorComponent,
   ],
   imports: [
     BrowserModule,

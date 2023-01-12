@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackendserviceService } from 'src/app/backendservice.service';
 
@@ -9,14 +9,18 @@ import { BackendserviceService } from 'src/app/backendservice.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  submitted=false
   public Loginstatus = false;
   isUserValid: boolean=false;
   LoginFormGroup:FormGroup;
+  
   constructor(private fb: FormBuilder, private route: Router,private backendservice:BackendserviceService) { 
   this.LoginFormGroup = this.fb.group({
-    username: [''],
-    password: ['']
+    username: ['',[Validators.required,Validators.email]],
+    password: ['',[Validators.required]]
+    
   })
+  
 }
   OnSubmit() {
     // if (this.LoginFormGroup.value.username == 'Admin' && this.LoginFormGroup.value.password == 'Admin') {
@@ -37,7 +41,11 @@ export class LoginComponent {
     //     }
     //   });
     // }
-    
+    this.submitted=true
+    if(this.LoginFormGroup.invalid)
+    {
+      return
+    }
     this.Loginstatus = true;
       this.backendservice.login([this.LoginFormGroup.value.username, this.LoginFormGroup.value.password]).subscribe(res => {
         console.log(res);

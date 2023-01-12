@@ -13,6 +13,14 @@
                       <div class="form-outline flex-fill mb-0">
                         <input type="text" formControlName="name" id="form3Example1c" class="form-control" />
                         <label class="form-label" for="form3Example1c">Your Name</label>
+                        <div *ngIf="submitted&&UserRegisterForm.controls.name.errors" class="text-danger">
+                          <div *ngIf="submitted&&UserRegisterForm.controls.name.errors.required" class="text-danger">
+                            Enter Name
+                          </div>
+                          <div *ngIf="submitted&&UserRegisterForm.controls.name.errors.pattern" class="text-danger">
+                            Invalid Name
+                          </div>
+                          </div>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
@@ -20,13 +28,27 @@
                       <div class="form-outline flex-fill mb-0">
                         <input type="email" formControlName="email" id="form3Example3c" class="form-control" />
                         <label class="form-label" for="form3Example3c">Your Email</label>
+                        <div *ngIf="submitted&&UserRegisterForm.controls.email.errors" class="text-danger">
+                          <div *ngIf="submitted&&UserRegisterForm.controls.email.errors.required" class="text-danger">
+                            Enter Email
+                          </div>
+                          <div *ngIf="submitted&&UserRegisterForm.controls.email.errors.email" class="text-danger">
+                            Invalid Email
+                          </div>
+    
+                        </div>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fa fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" formControlName="password" id="form3Example4c" class="form-control" />
+                        <input type="password" formControlName="password" id="form3Example4c" class="form-control" />
                         <label class="form-label" for="form3Example4c">Password</label>
+                        <div *ngIf="submitted&&UserRegisterForm.controls.password.errors" class="text-danger">
+                          <div *ngIf="submitted&&UserRegisterForm.controls.password.errors.required" class="text-danger">
+                            Enter Password
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

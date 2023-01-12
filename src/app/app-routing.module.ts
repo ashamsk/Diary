@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { Home1Component } from './home/home1/home1.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
+import { CalculatorComponent } from './userhome/calculator/calculator.component';
 import { DairydeleteComponent } from './userhome/dairydelete/dairydelete.component';
 import { DairyeditComponent } from './userhome/dairyedit/dairyedit.component';
 import { DairyentryComponent } from './userhome/dairyentry/dairyentry.component';
@@ -16,6 +17,7 @@ import { TodoComponent } from './userhome/todo/todo.component';
 import { TododeleteComponent } from './userhome/tododelete/tododelete.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { Userhome1Component } from './userhome/userhome1/userhome1.component';
+import { WeatherComponent } from './userhome/weather/weather.component';
 
 
 const routes: Routes = [{
@@ -39,7 +41,9 @@ children:
 {path:'profileinsert',component:ProfileinsertComponent},
 {path:'todo',component:TodoComponent},
 {path:'tododelete/:id',component:TododeleteComponent},
-{path:'userhome1',component:Userhome1Component}
+{path:'userhome1',component:Userhome1Component},
+{path:'weather',component:WeatherComponent},
+{path:'calculator',component:CalculatorComponent}
 
 ]
 },

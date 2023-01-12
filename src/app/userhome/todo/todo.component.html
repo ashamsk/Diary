@@ -39,6 +39,11 @@
              name="to-do"
              size="30"
              required>
+             <div *ngIf="submitted&&DiaryEntryForm.controls.task.errors" class="text-danger">
+              <div *ngIf="submitted&&DiaryEntryForm.controls.task.errors.required" class="text-danger">
+                Enter Task
+              </div>
+            </div>
              <input type="hidden" formControlName='uid' [(ngModel)]="uid">
             <input type="hidden" formControlName='status' [(ngModel)]="status">
         <button class="button" (click)="OnSubmit()"><span>Submit</span></button>

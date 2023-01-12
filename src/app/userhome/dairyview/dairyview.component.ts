@@ -15,6 +15,6 @@ export class DairyviewComponent {
   {
     this.uid=localStorage.getItem("uid")
     this.name=localStorage.getItem("name")
-    this.backendservice.getdairydata(this.uid).subscribe((res) => {this.Dataarray = res;})
+    this.backendservice.getdairydata(this.uid).subscribe((res) => {this.Dataarray = res.reverse();})
   }
 }

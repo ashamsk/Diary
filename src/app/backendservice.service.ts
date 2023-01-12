@@ -11,16 +11,18 @@ export class BackendserviceService {
   constructor(private http: HttpClient,private router:Router) { }
   insertuserdata(data: any) {
     this.http.post("https://localhost:7228/api/User/registration", data).toPromise().then(result => { console.log(result); })
+    this.router.navigate(['/home/login']); 
   }
   insertprofiledata(data: any) {
     this.http.post("https://localhost:7228/api/Profile/profile", data).toPromise().then(result => { console.log(result); })
+    this.router.navigate(['/userhome/profile']); 
   }
   viewprofiledata(pid: any) {
     return this.http.get<any>("https://localhost:7228/api/Profile/Viewprofile/" + pid)
   }
   updateprofiledata(data: any) {
     this.http.post("https://localhost:7228/api/Profile/updateprofile", data).toPromise().then(result => { console.log(result); })
-  
+    this.router.navigate(['/userhome/profile']); 
   }
   // getcoursebaseid(courseid: any) {
   //   return this.http.get<any>('https://localhost:7228/api//ViewCourseByid/' + courseid)
@@ -30,7 +32,7 @@ export class BackendserviceService {
       //console.log(data);
       console.log(result);
       //alert("Value Inserted Suceesfully !!");
-      //this.router.navigate(['/Home/view']); 
+      this.router.navigate(['/userhome/diaryview']); 
     })
   }
   login(loginInfo: Array<string>) {
@@ -53,7 +55,7 @@ export class BackendserviceService {
   {
     this.http.post("https://localhost:7228/api/User/Update",did).toPromise().then(result =>
     { console.log(result);
-      alert("Value Update Suceesfully !!"); 
+      //alert("Value Update Suceesfully !!"); 
     this.router.navigate(['/userhome/diaryview']);
   })
   }
@@ -68,7 +70,7 @@ export class BackendserviceService {
     
     return this.http.delete<any>('https://localhost:7228/api/User/deleteentry/'+did).toPromise().then(result=>
     {console.log(result)
-    alert("Value Deleted Sussessfully")
+    //alert("Value Deleted Sussessfully")
   this.router.navigate(['/userhome/diaryview']);})
   }
   inserttodo(data:any)
@@ -76,7 +78,7 @@ export class BackendserviceService {
     this.http.post("https://localhost:7228/api/Todo/Inserttodo", data).toPromise().then(result => {
       //console.log(data);
       console.log(result);
-      alert("Value Inserted Suceesfully !!");
+      //alert("Value Inserted Suceesfully !!");
       //this.router.navigate(['/userhome'])
       window.location.reload()
     })
@@ -93,8 +95,12 @@ export class BackendserviceService {
   {
     return this.http.delete<any>('https://localhost:7228/api/Todo/deletetodoentry/'+did).toPromise().then(result=>
     {console.log(result)
-    alert("Value Deleted Sussessfully")
+    //alert("Value Deleted Sussessfully")
   this.router.navigate(['/userhome/todo']);})
+  }
+  getRandomQuote()
+  {
+    return this.http.get('https://api.quotable.io/random');
   }
 
 }

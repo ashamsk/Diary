@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute, Route } from '@angular/router';
 import { BackendserviceService } from 'src/app/backendservice.service';
 
@@ -13,9 +13,10 @@ export class TodoComponent {
     
   }
   Dataarray: any[]=[];
+  submitted=false
   uid:any=localStorage.getItem("uid")
   status:any="not completed"
-  DiaryEntryForm = this.fb.group({  task: [''],  status: [''],uid:['']  })
+  DiaryEntryForm = this.fb.group({  task: ['',Validators.required],  status: [''],uid:['']  })
   ngOnInit()
   {
     let uid=localStorage.getItem("uid")
@@ -27,6 +28,11 @@ export class TodoComponent {
 
   OnSubmit()
   {
+    this.submitted=true
+    if(this.DiaryEntryForm.invalid)
+    {
+      return
+    }
     //console.log(this.DiaryEntryForm.value);
     this.backendservice.inserttodo(this. DiaryEntryForm.value)
     // this.ngOnInit()
