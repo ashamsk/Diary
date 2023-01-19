@@ -1,0 +1,57 @@
+<header>
+
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+
+                <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Home</span>
+                </a> -->
+                <a [routerLink]="['/userhome/expenseentry']" class="list-group-item list-group-item-action py-2 ripple "><i
+                        class="fa fa-inr fa-fw me-3"></i><span>Expense Entry</span></a>
+                <a [routerLink]="['/userhome/expenseview']" class="list-group-item list-group-item-action py-2 ripple"><i
+                        class="fa fa-calendar fa-fw me-3"></i><span>Expense View</span></a>
+                <a [routerLink]="['/userhome/expensecatagory']" class="list-group-item list-group-item-action py-2 ripple active">
+                    <i class="fa fa-pencil fa-fw me-3"></i><span>Add Categories</span>
+                </a>
+                <a [routerLink]="['/userhome/expenseviewtotal']" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fa fa-money fa-fw me-3"></i><span>All Expenses</span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+</header>
+
+<main style="margin-top: 58px">
+    <div class="container pt-4">
+
+    </div>
+</main>
+<form id="form_login" [formGroup]="categoryForm">
+    <!-- [formGroup]="categoryForm" -->
+    <div class="card">
+        <h2>Add Category</h2>
+        <br>
+        <p>
+
+            <input type="text" class="input" formControlName="category" id="categoryid" placeholder="Category"
+                class="input" />
+                <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
+        </p>
+        <p>
+            <!-- <button id="submitbutton" type="button" (click)="onSubmit()">Add</button> -->
+            <button class="cssbuttons-io-button" (click)="onSubmit()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+                </svg>
+                <!-- <svg fill="#ffffff" width="24" height="15" viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg"><path d="m0 10.909 4.364-4.364 8.727 8.727 15.273-15.273 4.364 4.364-19.636 19.636z"/></svg> -->
+                <span>Add Category</span>
+            </button>
+        </p>
+    </div>
+</form>

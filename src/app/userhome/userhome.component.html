@@ -43,10 +43,12 @@
           <li><a [routerLink]="['/userhome/diaryview']">Dairy View</a></li>    
           <li><a [routerLink]="['/userhome/profile']">Profile</a></li>   
           <li> <a [routerLink]="['/userhome/todo']">ToDo</a></li>  
-          <li> <a [routerLink]="['/userhome/weather']">Today's Weather</a></li>  
+          <!-- <li> <a [routerLink]="['/userhome/weather']">Today's Weather</a></li>   -->
+          <li> <a [routerLink]="['/userhome/expenseentry']">Expenses</a></li> 
           <li> <a [routerLink]="['/userhome/calculator']">Calculator</a></li> 
-          
-          <li> <a [routerLink]="['/home/home1']">Log Out</a></li>  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- <li> <a [routerLink]="['/home/home1']">Log Out</a></li>   -->
+          <li><button (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></button></li>
           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

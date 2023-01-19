@@ -111,7 +111,7 @@ header {
 button[class^='btn-']:hover,
 a[class^='btn-']:hover,
 input[class^='btn-']:hover {
-  background-color: lightgoldenrodyellow;
+  background-color: White;
   color: lightcoral;
   font-weight: 700;
   transform: scale(1.08);
@@ -129,7 +129,7 @@ input[class^='btn-']:hover {
   padding: 1em;
   border-radius: 2px;
   border: unset;
-  background-color: lightgoldenrodyellow;
+  background-color: White;
   font-family: 'Space Mono', monospace;
   outline-color: lightcoral;
   font-family: 'Space Mono', monospace;
@@ -182,7 +182,7 @@ input[class^='btn-']:hover {
   padding: 1em;
   border-radius: 2px;
   border: unset;
-  background-color: lightgoldenrodyellow;
+  background-color: White;
   font-family: 'Space Mono', monospace;
 }
 
@@ -194,7 +194,7 @@ input[class^='btn-']:hover {
     padding: 1em;
     border-radius: 2px;
     border: unset;
-    background-color: lightgoldenrodyellow;
+    background-color: White;
     font-family: 'Space Mono', monospace;
   }
 }
@@ -242,12 +242,12 @@ input[class^='btn-']:hover {
 }
 
 .single-entry-date {
-  background-color: lightgoldenrodyellow;
+  background-color: white;
   width: 100%;
 }
 
 .heading-results {
   text-align: center;
   text-decoration: underline;
-  text-decoration-color: lightgoldenrodyellow;
+  text-decoration-color: white;
 }

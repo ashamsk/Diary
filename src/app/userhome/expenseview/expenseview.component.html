@@ -1,0 +1,100 @@
+
+<header>
+
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+  
+          
+          <a [routerLink]="['/userhome/expenseentry']" class="list-group-item list-group-item-action py-2 ripple "><i
+              class="fa fa-inr fa-fw me-3"></i><span>Expense Entry</span></a>
+          <a [routerLink]="['/userhome/expenseview']" class="list-group-item list-group-item-action py-2 ripple active"><i
+              class="fa fa-calendar fa-fw me-3"></i><span>Expense View</span></a>
+          <a [routerLink]="['/userhome/expensecategory']" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fa fa-pencil fa-fw me-3"></i><span>Add Categories</span>
+          </a>
+          <a [routerLink]="['/userhome/expenseviewtotal']" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fa fa-money fa-fw me-3"></i><span>All Expenses</span>
+        </a>
+        </div>
+      </div>
+    </nav>
+  
+  
+  
+  </header>
+  
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+  
+    </div>
+  </main>
+  
+  <form id="form_login" [formGroup]="searchform">
+    <!-- [formGroup]="searchform" -->
+    <div class="card">
+      <h2 style="color: black;">View Expenses</h2>
+      <br>
+      <p>
+        <label for="">Start Date</label>&nbsp;&nbsp;
+        <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
+        <input type="date" formControlName="datestart" id="categoryid" placeholder="Category" style="width:190px"/>
+      </p>
+      <p>
+        <label for="">End Date</label>&nbsp;&nbsp;
+        <input type="date" formControlName="dateend" id="categoryid" placeholder="Category" style="width:190px"/>
+      </p>
+  
+      <br>
+      <br>
+      <p>
+        <!-- <button id="submitbutton" type="button" (click)="onSubmit()">Show</button> -->
+        <button class="cssbuttons-io-button" (click)="onSubmit()">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> -->
+          <!-- <svg fill="#ffffff" width="24" height="15" viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg"><path d="m0 10.909 4.364-4.364 8.727 8.727 15.273-15.273 4.364 4.364-19.636 19.636z"/></svg> -->
+          <svg fill="#ffffff" width="30" height="30" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"
+            class="cf-icon-svg">
+            <path
+              d="M14.546 6.201a.554.554 0 0 1-.554.554h-1.79a2.22 2.22 0 0 1-4.298 0H1.008a.554.554 0 0 1 0-1.108h6.896a2.22 2.22 0 0 1 4.299 0h1.789a.554.554 0 0 1 .554.554zm0 3.7a.554.554 0 0 1-.554.554H6.987a2.22 2.22 0 0 1-4.298 0h-1.68a.554.554 0 0 1 0-1.108h1.68a2.22 2.22 0 0 1 4.298 0h7.005a.554.554 0 0 1 .554.554zm0 3.7a.554.554 0 0 1-.554.555h-1.79a2.22 2.22 0 0 1-4.298 0H1.008a.554.554 0 0 1 0-1.109h6.896a2.22 2.22 0 0 1 4.299 0h1.789a.554.554 0 0 1 .554.554zm-8.597-3.7a1.11 1.11 0 1 0-1.111 1.111 1.112 1.112 0 0 0 1.11-1.11zm5.215-3.7a1.111 1.111 0 1 0-1.11 1.11 1.112 1.112 0 0 0 1.11-1.11zm0 7.4a1.111 1.111 0 1 0-1.11 1.111 1.112 1.112 0 0 0 1.11-1.11z" />
+          </svg>
+          <span>Filter</span>
+        </button>
+      </p>
+    </div>
+  </form>
+  
+  <div id="demo">
+    <!-- <h1>Responsive Table Design</h1>
+      <h2>UI Table for CMS</h2> -->
+  
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  
+    <div class="table-responsive-vertical">
+  
+      <!-- Table -->
+      <table>
+  
+        <tbody>
+            <tr *ngIf="DataArray != null">
+
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Category</th>
+            </tr>
+          <tr *ngFor="let item of DataArray;index as j">
+            <td>{{item.description}}</td>
+            <td>₹{{item.amount}}</td>
+            <td>{{DArray[j]}}</td>
+            <td>{{item.category}}</td>
+            
+          </tr>
+          <tr *ngIf="DataArray != null">
+            <th>Total Expense</th>
+          <th>₹ {{total}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

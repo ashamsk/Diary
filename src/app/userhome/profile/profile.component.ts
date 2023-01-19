@@ -40,6 +40,7 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
+    // window.location.reload()
     let pid=localStorage.getItem("uid")
     // var pid:number=2;
     this.backendservice.viewprofiledata(pid).subscribe((data: any) => {

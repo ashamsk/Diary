@@ -23,24 +23,7 @@ export class LoginComponent {
   
 }
   OnSubmit() {
-    // if (this.LoginFormGroup.value.username == 'Admin' && this.LoginFormGroup.value.password == 'Admin') {
-    //   this.route.navigate(['userhome'])
-    // }
-    // else {
-    //   this.Loginstatus = true;
-    //   this.backendservice.login([this.LoginFormGroup.value.username, this.LoginFormGroup.value.password]).subscribe(res => {
-    //     console.log(res);
-    //     console.log(this.LoginFormGroup.value.username)
-    //     if (res == 'Failed') {
-    //       this.isUserValid = false;
-    //       alert('Login Unsuccessful');
-    //     } else {
-    //       this.isUserValid = true;
-    //       alert('Login successful');
-    //       this.route.navigate(['userhome'])
-    //     }
-    //   });
-    // }
+   
     this.submitted=true
     if(this.LoginFormGroup.invalid)
     {
@@ -57,12 +40,13 @@ export class LoginComponent {
           alert('Login Unsuccessful');
         } else {
           this.isUserValid = true;
-          alert('Login successful');
+          //alert('Login successful');
           console.log(res);
           let obj = JSON.parse(res);
           console.log(obj.uid);
           localStorage.setItem("name",obj.name);
           localStorage.setItem("uid",obj.uid);
+          localStorage.setItem('token', 'authenticated');
           this.route.navigate(['userhome/userhome1'])
         }
       });

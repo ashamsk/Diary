@@ -1,3 +1,4 @@
+<html style="background-image:url(../assets/images/slide/BckBlur.jpg);background-position:center;background-repeat: no-repeat;">
 <section class="section journal-section">
     <div class="container">
       <div class="container-row container-row-journal">
@@ -12,10 +13,17 @@
               name="entry-title"
               id="entry-title"
               class="entry-text-title ng-pristine ng-valid ng-touched"
-
+              placeholder="Title Here"
               formControlName='title'
 
             />
+            <div *ngIf="submitted&&DiaryEntryForm.controls.title.errors" class="text-danger">
+              <div *ngIf="submitted&&DiaryEntryForm.controls.title.errors.required" class="text-danger">
+                Enter Title
+              </div>
+            </div>
+
+
             <label for="entry-title" class="journal-label">Date</label>
             <input
               type="text"
@@ -33,6 +41,13 @@
               formControlName='description'
               class="entry-text-box"
               placeholder="What's on your mind today? 💭"></textarea>
+              <div *ngIf="submitted&&DiaryEntryForm.controls.description.errors" class="text-danger">
+                <div *ngIf="submitted&&DiaryEntryForm.controls.description.errors.required" class="text-danger">
+                  Enter Something !!
+                </div>
+              </div>
+
+
             <button class="btn-main entry-submit-btn" (click)="onSubmit()">Add Entry</button>
             <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
           </form>
@@ -47,3 +62,4 @@
       <div class="container-row entryResultRow"></div>
     </div>
   </section>
+  </html>

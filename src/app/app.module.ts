@@ -25,6 +25,10 @@ import { Home1Component } from './home/home1/home1.component';
 import { Userhome1Component } from './userhome/userhome1/userhome1.component';
 import { WeatherComponent } from './userhome/weather/weather.component';
 import { CalculatorComponent } from './userhome/calculator/calculator.component';
+import { ExpensecategoryComponent } from './userhome/expensecategory/expensecategory.component';
+import { ExpenseentryComponent } from './userhome/expenseentry/expenseentry.component';
+import { ExpenseviewComponent } from './userhome/expenseview/expenseview.component';
+import { ExpenseviewtotalComponent } from './userhome/expenseviewtotal/expenseviewtotal.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,10 @@ import { CalculatorComponent } from './userhome/calculator/calculator.component'
     Userhome1Component,
     WeatherComponent,
     CalculatorComponent,
+    ExpensecategoryComponent,
+    ExpenseentryComponent,
+    ExpenseviewComponent,
+    ExpenseviewtotalComponent,
   ],
   imports: [
     BrowserModule,

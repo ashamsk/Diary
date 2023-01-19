@@ -9,6 +9,9 @@ export class BackendserviceService {
 
 
   constructor(private http: HttpClient,private router:Router) { }
+
+  
+
   insertuserdata(data: any) {
     this.http.post("https://localhost:7228/api/User/registration", data).toPromise().then(result => { console.log(result); })
     this.router.navigate(['/home/login']); 
@@ -102,5 +105,32 @@ export class BackendserviceService {
   {
     return this.http.get('https://api.quotable.io/random');
   }
+  addcategory(data:any)
+  {
+    this.http.post("https://localhost:7228/api/Expense/categoryentry", data).toPromise().then(result => {
+      console.log(result);
+      window.location.reload()
+    })
+  }
+  viewcategory(uid:any)
+  {
+    return this.http.get<any>("https://localhost:7228/api/Expense/categoryview/" + uid)
+  }
+  insertexpense(data:any)
+  {
+    this.http.post("https://localhost:7228/api/Expense/expenseentry", data).toPromise().then(result => {
+      console.log(result);
+      // alert("Inserted Successfully")
+      window.location.reload()
+    })
+  }
+  searchdate(datestart:any,dateend:any,uid:any){
+    return this.http.get<any>(`https://localhost:7228/api/Expense/datesearch?datestart=${datestart}&dateend=${dateend}&uid=${uid}`)
+  }
+  completeexpense(uid:any){
+    return this.http.get<any>(`https://localhost:7228/api/Expense/ExpenseView?uid=${uid}`)
+  }
+  
+
 
 }
