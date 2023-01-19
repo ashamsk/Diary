@@ -42,6 +42,12 @@
                 class="input" />
                 <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
         </p>
+        <div *ngIf="submitted&&categoryForm.controls.category.errors" class="text-danger">
+            <div *ngIf="submitted&&categoryForm.controls.category.errors.required" class="text-danger">
+              Enter the Category
+            </div>
+          </div>
+        
         <p>
             <!-- <button id="submitbutton" type="button" (click)="onSubmit()">Add</button> -->
             <button class="cssbuttons-io-button" (click)="onSubmit()">

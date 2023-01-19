@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { BackendserviceService } from 'src/app/backendservice.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { BackendserviceService } from 'src/app/backendservice.service';
   styleUrls: ['./expenseview.component.scss']
 })
 export class ExpenseviewComponent {
+  submitted=false
   constructor(private datepipe:DatePipe,private fb:FormBuilder,private backendservice:BackendserviceService){
     this.uid=localStorage.getItem("uid")
   }
@@ -18,11 +19,16 @@ export class ExpenseviewComponent {
   total:any
   DArray:any=[]
   searchform=this.fb.group({
-    datestart:[''],
-    dateend:[''],
+    datestart:['',[Validators.required]],
+    dateend:['',[Validators.required]],
     uid:['']
   })
   onSubmit(){
+    this.submitted=true
+    if(this.searchform.invalid)
+    {
+      return
+    }
 this.backendservice.searchdate(this.searchform.value.datestart,this.searchform.value.dateend,this.uid).subscribe((res) => {
   this.DataArray=res
   console.log(this.DataArray)
@@ -40,5 +46,10 @@ this.DArray.push(this.TrasfromedTime)
 // console.log(this.searchform.value.dateend)
 // console.log(this.searchform.value.datestart)
 console.log(this.searchform.value)
+  }
+  del(eid:any)
+  {
+    this.backendservice.deleteexpense(eid);
+    console.log(eid)
   }
 }

@@ -1,4 +1,3 @@
-
 <div>
     
 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
@@ -44,13 +43,26 @@
         <p>
             <!-- <label for="">Date</label>&nbsp; -->
             <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
+            
             <input type="date" class="input" formControlName="date" placeholder="Amount" style="width:190px;color: gray;" />
+            <!-- <div *ngIf="submitted&&Entryform.controls.date.errors.required" class="text-danger"></div> -->
+             
         </p>
+        <div *ngIf="submitted&&Entryform.controls.date.errors" class="text-danger">
+            <div *ngIf="submitted&&Entryform.controls.date.errors.required" class="text-danger">
+              Enter Date
+            </div>
+          </div>
         
         <p>
             
             <input type="number" class="input" formControlName="amount" placeholder="₹ Amount" style="width:190px" />
         </p>
+        <div *ngIf="submitted&&Entryform.controls.amount.errors" class="text-danger">
+            <div *ngIf="submitted&&Entryform.controls.amount.errors.required" class="text-danger">
+              Enter your Amount
+            </div>
+          </div>
         <p *ngIf="DataArray">
 
             <select name="cars" class="input" formControlName="category" style="color:gray;width:190px;height: auto;">
@@ -61,7 +73,11 @@
                 <option *ngFor="let item of DataArray" value="{{item.category}}"  style="color:rgb(12, 12, 14)">{{item.category}}</option>
             </select>
         </p>
-
+        <div *ngIf="submitted&&Entryform.controls.category.errors" class="text-danger">
+            <div *ngIf="submitted&&Entryform.controls.category.errors.required" class="text-danger">
+              Choose your category
+            </div>
+          </div>
 
 
 
@@ -70,6 +86,11 @@
             <input type="text" class="input" formControlName="description" placeholder="Description"
                 style="width:190px" />
         </p>
+        <div *ngIf="submitted&&Entryform.controls.description.errors" class="text-danger">
+            <div *ngIf="submitted&&Entryform.controls.description.errors.required" class="text-danger">
+              Enter the description
+            </div>
+          </div>
         <p>
             <!-- <button id="submitbutton" type="button" (click)="onSubmit()" style="width:130px">Add</button> -->
             <button class="cssbuttons-io-button" (click)="onSubmit()">

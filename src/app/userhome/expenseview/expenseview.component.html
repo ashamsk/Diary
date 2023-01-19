@@ -40,10 +40,20 @@
         <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
         <input type="date" formControlName="datestart" id="categoryid" placeholder="Category" style="width:190px"/>
       </p>
+      <div *ngIf="submitted&&searchform.controls.datestart.errors" class="text-danger">
+        <div *ngIf="submitted&&searchform.controls.datestart.errors.required" class="text-danger">
+          Enter the Start Date
+        </div>
+      </div>
       <p>
         <label for="">End Date</label>&nbsp;&nbsp;
         <input type="date" formControlName="dateend" id="categoryid" placeholder="Category" style="width:190px"/>
       </p>
+      <div *ngIf="submitted&&searchform.controls.dateend.errors" class="text-danger">
+        <div *ngIf="submitted&&searchform.controls.dateend.errors.required" class="text-danger" >
+          Enter the End Date
+        </div>
+      </div>
   
       <br>
       <br>
@@ -82,12 +92,15 @@
                 <th>Amount</th>
                 <th>Date</th>
                 <th>Category</th>
+                <th></th>
             </tr>
           <tr *ngFor="let item of DataArray;index as j">
             <td>{{item.description}}</td>
             <td>₹{{item.amount}}</td>
             <td>{{DArray[j]}}</td>
             <td>{{item.category}}</td>
+            <!-- <td><a [routerLink]="['/userhome/tododelete',item.tid]"><i class="fa fa-trash"></i></a></td>     -->
+            <td><button style="color: rgb(118, 9, 235);border:gray" (click)="del(item.eid)"><i class="fa fa-trash"></i></button></td>   
             
           </tr>
           <tr *ngIf="DataArray != null">

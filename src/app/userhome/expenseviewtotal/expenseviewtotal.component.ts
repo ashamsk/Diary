@@ -36,4 +36,9 @@ export class ExpenseviewtotalComponent {
     
     
   }
+  del(eid:any)
+  {
+    this.backendservice.deleteexpense(eid);
+    console.log(eid)
+  }
 }

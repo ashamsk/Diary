@@ -82,12 +82,15 @@
                 <th>Amount</th>
                 <th>Date</th>
                 <th>Category</th>
+                <th></th>
             </tr>
           <tr *ngFor="let item of DataArray;index as j">
             <td>{{item.description}}</td>
             <td>₹{{item.amount}}</td>
             <td>{{DArray[j]}}</td>
             <td>{{item.category}}</td>
+            <!-- <td><a [routerLink]="['/userhome/tododelete',item.eid]"><i class="fa fa-trash"></i></a></td>  -->
+            <td><button style="color: rgb(118, 9, 235);border:gray" (click)="del(item.eid)"><i class="fa fa-trash"></i></button></td>   
           </tr>
           <tr>
             <th>Total Expense</th>

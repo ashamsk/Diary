@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { BackendserviceService } from 'src/app/backendservice.service';
 
 @Component({
@@ -10,21 +10,27 @@ import { BackendserviceService } from 'src/app/backendservice.service';
 export class ExpenseentryComponent {
   DataArray:any
   uid:any
+  submitted=false
   constructor(private fb:FormBuilder,private backendservice:BackendserviceService){
     this.uid=localStorage.getItem("uid")
   }
   // Entryform:any
   
   Entryform=this.fb.group({
-    date:[''],
-    amount:[''],
-    category:[''],
-    description:[''],
+    date:['',[Validators.required]],
+    amount:['',[Validators.required]],
+    category:['',[Validators.required]],
+    description:['',[Validators.required]],
     uid:['']
     
   })
   onSubmit()
   {
+    this.submitted=true
+    if(this.Entryform.invalid)
+    {
+      return
+    }
     this.backendservice.insertexpense(this.Entryform.value)
 console.log(this.Entryform.value)
   }

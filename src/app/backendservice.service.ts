@@ -130,6 +130,14 @@ export class BackendserviceService {
   completeexpense(uid:any){
     return this.http.get<any>(`https://localhost:7228/api/Expense/ExpenseView?uid=${uid}`)
   }
+  deleteexpense(eid:any){
+    return this.http.delete<any>('https://localhost:7228/api/Expense/deleteexpenseentry/'+eid).toPromise().then(result=>
+    {console.log(result)
+    // alert("Value Deleted Sussessfully")
+    window.location.reload()
+  // this.router.navigate(['/userhome/'])
+  ;})
+  }
   
 
 
