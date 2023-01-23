@@ -76,5 +76,6 @@ this.uid=localStorage.getItem("uid")
   OnSubmit()
   {
       this.backendservice.updateprofiledata(this.ProfileEditForm.value)
+      this.router.navigate(['/userhome/profile']);
   }
 }

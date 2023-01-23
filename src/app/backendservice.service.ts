@@ -139,6 +139,14 @@ export class BackendserviceService {
   ;})
   }
   
-
+  deletecategory(cid:any)
+  {
+    return this.http.delete<any>('https://localhost:7228/api/Expense/deletecategory/'+cid).toPromise().then(result=>
+    {console.log(result)
+    // alert("Value Deleted Sussessfully")
+    window.location.reload()
+  // this.router.navigate(['/userhome/'])
+  ;})
+  }
 
 }

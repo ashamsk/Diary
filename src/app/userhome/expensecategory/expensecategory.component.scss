@@ -126,3 +126,220 @@ body {
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
 }
+
+#demo {
+    margin: 20px auto;
+    max-width: 960px;
+  }
+  #demo h1 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0;
+    font-weight: 300;
+    color: #212121;
+    text-transform: inherit;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #demo h2 {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.01rem;
+    font-weight: 400;
+    color: #212121;
+    text-align: center;
+  }
+  
+  
+  
+  // Primary styles
+  // Sass Variables
+  $table-header-font-weight:      400;
+  $table-header-font-color:       #757575;
+  $table-cell-padding:            1.6rem;
+  $table-condensed-cell-padding:  $table-cell-padding/2;
+//   $table-bg:                      #f2f2f4;
+$table-bg:                      transparent;
+//   $table-bg-accent:               #f2f2f4;
+$table-bg-accent:              transparent;
+  $table-bg-hover:                rgba(0,0,0,.04);
+  $table-bg-active:               $table-bg-hover;
+  $table-border-color:            #e0e0e0;
+  $table-inactive-color:          #d2d2d2;
+  
+  // Tables
+  // Baseline
+  table {
+    width: 50%;
+    height:40%;
+    padding-left: 100px;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    background-color:transparent;
+    border: 2px solid $table-border-color;
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        transition: all .3s ease;
+        
+        th,
+        td {
+          text-align: left;
+          padding: $table-cell-padding;
+          vertical-align: top;
+          border-top: 0;
+          transition: all .3s ease;
+        }
+      }
+    }
+    thead > tr > th {
+      font-weight: $table-header-font-weight;
+      color: $table-header-font-color;
+      vertical-align: bottom;
+    
+    }
+    caption + thead,
+    colgroup + thead,
+    thead:first-child {
+      tr:first-child {
+        th,
+        td {
+          border-top: 0;
+        }
+      }
+    }
+    tbody + tbody {
+    //   border-top: 1px solid rgba(0,0,0,.12);
+    }
+  
+    table {
+      background-color: $table-bg;
+    }
+  
+    // Border styles
+    // Add horizontal borders between columns.
+    border: 0;
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        th,
+        td {
+          border: 0;
+        //   border-bottom: 1px solid $table-border-color;
+        }
+      }
+    }
+    thead > tr {
+      th,
+      td {
+        border-bottom-width: 2px;
+      }
+    }
+  
+    // Zebra-striping style
+    tbody > tr:nth-child(odd) {
+      td,
+      th {
+        background-color: $table-bg-accent;
+      }
+    }
+  
+    // Hover effect style
+    tbody > tr:hover {
+      td,
+      th {
+        background-color: $table-bg-hover;
+      }
+    }
+  }
+  
+  // Inactive color
+  tr.inactive {
+    background: $table-inactive-color;
+  }
+  
+  
+  
+  .table-responsive-vertical {
+    @media screen and (max-width: 768px) {
+      table {
+        margin-bottom: 0;
+        background-color:transparent;
+        thead,
+        tfoot {
+          display: none;
+        }
+       tbody {
+          display: block;
+          tr {
+            display: block;
+            border: 1px solid $table-border-color;
+            border-radius: 2px;
+            margin-bottom: $table-cell-padding;
+  
+            td {
+              background-color: $table-bg;
+              display: block;
+              // vertical-align: middle;
+              text-align: right;
+            }
+            td[data-title]:before {
+              content: attr(data-title);
+              float: left;
+              font-size: inherit;
+              font-weight: $table-header-font-weight;
+              color: $table-header-font-color;
+            }
+          }
+        }
+      }
+  
+      table {
+        border: 0;
+        box-shadow: none;
+        tbody {
+          tr {
+            td {
+              border: 0;
+              border-bottom: 1px solid $table-border-color;
+            }
+            td:last-child {
+              border-bottom: 0;
+            }
+          }
+        }
+        tbody > tr > td,
+        tbody > tr:nth-child(odd) {
+            background-color: $table-bg;
+        }
+        tbody > tr > td:nth-child(odd) {
+            background-color: $table-bg-accent;
+        }
+        
+        tbody {
+          tr:hover > td,
+          tr:hover {
+            background-color: $table-bg;
+          }
+          tr{
+            border: none;
+            td:hover {
+              background-color: $table-bg-hover;
+            }
+          }
+        }
+        a {
+          color: #194497;
+        }
+  
+        td[data-title="Code"] {
+          font-weight: 700;
+        }
+  
+        td[data-title="Name"] {}
+      }
+    }
+  }
+  

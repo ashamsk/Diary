@@ -35,7 +35,7 @@ console.log(this.tid)
 
   
      });
-      //this.DeleteForm.patchValue(this.Coursedataarray)
+      
       });
   
       }

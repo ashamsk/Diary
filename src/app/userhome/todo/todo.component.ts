@@ -35,7 +35,6 @@ export class TodoComponent {
     }
     //console.log(this.DiaryEntryForm.value);
     this.backendservice.inserttodo(this. DiaryEntryForm.value)
-    // this.ngOnInit()
-      // this.router.navigate(['app']);
+    
   }
 }

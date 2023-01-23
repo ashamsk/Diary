@@ -39,7 +39,7 @@ ngOnInit(): void{
       uid:localStorage.getItem("uid"),
 
     });
-    //this.EditCourseForm.patchValue(this.Coursedataarray)
+    
     });
     }
 

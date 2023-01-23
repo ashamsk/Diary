@@ -2,9 +2,14 @@ body {
     background: rgb(99, 39, 120)
 }
 
+.form-control{
+  box-shadow: none;
+  border-color:black;
+}
+
 .form-control:focus {
     box-shadow: none;
-    border-color: #BA68C8
+    border-color: red;
 }
 
 .profile-button {
@@ -62,6 +67,7 @@ body {
     
     input {
       display: none;
+      border: 3px;
     }
     
     img {

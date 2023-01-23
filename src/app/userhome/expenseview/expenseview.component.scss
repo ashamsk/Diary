@@ -172,11 +172,7 @@ tr.inactive {
   background: $table-inactive-color;
 }
 
-// Responsive tables (vertical)
-// Wrap tables in `.table-responsive-vertical` ==  mobile friendly
-// by vertical table-cell display. Only applies <768px
-// everything above that will display normally.
-// For correct display must add 'data-title' to each 'td'
+
 
 .table-responsive-vertical {
   @media screen and (max-width: 768px) {
@@ -198,7 +194,7 @@ tr.inactive {
           td {
             background-color: $table-bg;
             display: block;
-            vertical-align: middle;
+            // vertical-align: middle;
             text-align: right;
           }
           td[data-title]:before {
@@ -363,3 +359,28 @@ h2{
   font-variant: small-caps;
   
   }
+
+  .input {
+    width: 100%;
+    max-width: 220px;
+    height: 45px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+
+.input:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    border: 2px solid grey;
+}

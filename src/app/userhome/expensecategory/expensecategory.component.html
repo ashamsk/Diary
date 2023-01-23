@@ -3,10 +3,6 @@
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
-
-                <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Home</span>
-                </a> -->
                 <a [routerLink]="['/userhome/expenseentry']" class="list-group-item list-group-item-action py-2 ripple "><i
                         class="fa fa-inr fa-fw me-3"></i><span>Expense Entry</span></a>
                 <a [routerLink]="['/userhome/expenseview']" class="list-group-item list-group-item-action py-2 ripple"><i
@@ -61,3 +57,30 @@
         </p>
     </div>
 </form>
+
+<div id="demo">
+  
+    <div class="table-responsive-vertical">
+  
+      <!-- Table -->
+      <table align="center">
+  
+        <tbody>
+           
+           <tr *ngFor="let item of DataArray;index as j">
+            <!-- <td>{{item.description}}</td>
+            <td>₹{{item.amount}}</td>
+            <td>{{DArray[j]}}</td> -->
+            <td>{{item.category}}</td>
+            
+            <td><button style="color: rgb(118, 9, 235);border:transparent;background-color: transparent;" (click)="del(item.cid)"><i class="fa fa-trash"></i></button></td>   
+            <!-- (click)="del(item.eid)" -->
+          </tr>
+          <!--<tr *ngIf="DataArray != null">
+            <th>Total Expense</th>
+          <th>₹ {{total}}</th>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
