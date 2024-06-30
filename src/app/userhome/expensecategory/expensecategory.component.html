@@ -33,10 +33,9 @@
         <h2>Add Category</h2>
         <br>
         <p>
-
             <input type="text" class="input" formControlName="category" id="categoryid" placeholder="Category"
-                class="input" />
-                <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
+            class="input"/>
+            <input type="hidden" formControlName='uid' [(ngModel)]="uid" >
         </p>
         <div *ngIf="submitted&&categoryForm.controls.category.errors" class="text-danger">
             <div *ngIf="submitted&&categoryForm.controls.category.errors.required" class="text-danger">
